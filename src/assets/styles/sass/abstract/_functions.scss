@@ -1,0 +1,17 @@
+@use '../components/typography' as txt;
+@use 'sass:math';
+
+//*********************//
+//* Format from pixel *//
+//*********************//
+@function px-to-rem($pixels, $font-size: txt.$font-size--default) {
+  @return (math.div($pixels, $font-size) * 1rem);
+}
+
+@function px-to-em($pixels, $font-size: txt.$font-size--default) {
+  @return (math.div($pixels, $font-size) * 1em);
+}
+
+@function px-to-unitless($pixels, $font-size: txt.$font-size--default) {
+  @return math.div($pixels, $font-size);
+}

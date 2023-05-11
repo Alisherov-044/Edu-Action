@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "language": "uzbek",
+        "code": "Uz"
+    },
+    {
+        "id": 2,
+        "language": "russian",
+        "code": "Ru"
+    },
+    {
+        "id": 3,
+        "language": "english",
+        "code": "En"
+    }
+]

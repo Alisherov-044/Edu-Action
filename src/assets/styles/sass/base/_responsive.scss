@@ -1,0 +1,22 @@
+@use '../abstract/mixins';
+
+/*********************
+** Resposive Styles **
+*********************/
+:root {
+    @include mixins.breakpoint--lg {
+        font-size: 15px;
+    }
+
+    @include mixins.breakpoint--md {
+        font-size: 14px;
+    }
+
+    @include mixins.breakpoint--sm-extra {
+        font-size: 13px;
+    }
+
+    @include mixins.breakpoint--sm {
+        font-size: 12px;
+    }
+}

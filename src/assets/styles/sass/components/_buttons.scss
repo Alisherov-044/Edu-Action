@@ -1,0 +1,29 @@
+@use '../abstract/mixins';
+@use '../abstract/functions' as fn;
+@use '../base/variables' as var;
+
+/******************
+** Button Styles **
+******************/
+.btn {
+    display: inline-block;
+    position: relative;
+    padding: fn.px-to-em(18px) fn.px-to-em(36px);
+    border-radius: 8px;
+    font-family: var.$primary-font;
+    font-size: fn.px-to-rem(16px);
+    line-height: fn.px-to-rem(19px);
+    font-weight: 600;
+    cursor: pointer;
+
+    &.primary {
+        background-color: var.$primary-btn--color;
+        color: var.$white--color;
+    }
+
+    &.secondary {
+        background-color: var.$white--color;
+        color: var.$black--color;
+        border: 1px solid var.$grey--color;
+    }
+}

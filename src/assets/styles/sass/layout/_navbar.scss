@@ -1,0 +1,97 @@
+@use '../abstract/mixins';
+@use '../abstract/functions' as fn;
+@use '../base/variables' as var;
+
+/******************
+** Navbar Styles **
+******************/
+.navbar {
+    position: relative;
+    padding: fn.px-to-em(10px) 0;
+    border-bottom: 1px solid var.$link--color;
+
+    @include mixins.breakpoint--x-lg-extra {
+        border-bottom: transparent;
+    }
+    
+    .container {
+        @include mixins.d-flex(row, center, space-between);
+    }
+
+    .navbar__content {
+        @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(131px));
+
+        .logo {
+            position: relative;
+            width: fn.px-to-em(110px);
+            height: fn.px-to-em(79px);
+        }
+
+        .navbar__links {
+            @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(48px));
+
+            @include mixins.breakpoint--x-lg-extra {
+                display: none;
+            }
+
+            .navbar__link {
+                font-size: fn.px-to-rem(16px);
+                font-weight: 600;
+                line-height: fn.px-to-rem(19px);
+                color: var.$link--color;
+                transition: all .3s ease;
+
+                &:hover {
+                    color: var.$black--color;
+                }
+
+                &.active {
+                    color: var.$black--color;
+                }
+            }
+        }
+    }
+
+    .navbar__action {
+        @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(12px));
+        position: relative;
+
+        .languages-selection {
+            position: relative;
+            width: fn.px-to-em(83px);
+            height: fn.px-to-em(55px);
+            border: 1px solid var.$grey--color;
+            border-radius: 8px;
+            cursor: pointer;
+
+            .arrow-icon {
+                position: absolute;
+                top: 50%;
+                right: fn.px-to-em(18px);
+                transform: translateY(-70%) rotate(-45deg);
+                width: fn.px-to-em(8px);
+                height: fn.px-to-em(8px);
+                border: {
+                    left: 2px solid var.$grey--color;
+                    bottom: 2px solid var.$grey--color;
+                };
+            }
+
+            .language {
+                @include mixins.d-flex(unset, center, unset);
+                padding-left: fn.px-to-em(18px);
+                width: 100%;
+                height: 100%;
+                border: 1px solid var.$grey--color;
+                border-radius: inherit;
+                background: #fff;
+                z-index: 999;
+
+                &:not(.selected) {
+                    display: none;
+                    margin-top: 2px;
+                }
+            }
+        }
+    }
+}

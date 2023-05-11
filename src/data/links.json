@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "value": "Asosiy sahifa",
+        "slug": "asosiy_sahifa"
+    },
+    {
+        "id": 2,
+        "value": "Ta'im dasturlari",
+        "slug": "talim_dasturlari"
+    },
+    {
+        "id": 3,
+        "value": "Biz haqimizda",
+        "slug": "biz_haqimizda"
+    },
+    {
+        "id": 4,
+        "value": "Blog",
+        "slug": "blog"
+    }
+]

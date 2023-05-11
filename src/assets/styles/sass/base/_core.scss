@@ -1,0 +1,58 @@
+@use '../abstract/mixins';
+@use '../abstract/functions' as fn;
+@use '../base/variables' as var;
+@use '../components/typography' as txt;
+
+/****************
+** Core Styles **
+****************/
+:root {
+    font-size: txt.$font-size--default;
+}
+
+* {
+    font-family: var.$primary-font;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    @include mixins.full-relative;
+}
+
+#root {
+    @extend body;
+    @include mixins.d-flex(column, unset, unset);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    @include mixins.img-normalize;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+}
+
+button,
+input {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.container {
+    position: relative;
+    max-width: calc(1420px + 40px);
+    width: 100%;
+    padding: 0 fn.px-to-em(20px);
+    margin: 0 auto;
+}
