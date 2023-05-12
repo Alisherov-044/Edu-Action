@@ -16,8 +16,10 @@
     
     .container {
         @include mixins.d-flex(row, center, space-between);
+        z-index: 999;
     }
 
+    // navbar content
     .navbar__content {
         @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(131px));
 
@@ -33,64 +35,115 @@
             @include mixins.breakpoint--x-lg-extra {
                 display: none;
             }
-
-            .navbar__link {
-                font-size: fn.px-to-rem(16px);
-                font-weight: 600;
-                line-height: fn.px-to-rem(19px);
-                color: var.$link--color;
-                transition: all .3s ease;
-
-                &:hover {
-                    color: var.$black--color;
-                }
-
-                &.active {
-                    color: var.$black--color;
-                }
-            }
         }
     }
 
+    // navbar action
     .navbar__action {
         @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(12px));
         position: relative;
 
-        .languages-selection {
+        .burger-menu {
+            @include mixins.d-flex(column, center, center, nowrap, fn.px-to-em(9px));
+            display: none;
             position: relative;
-            width: fn.px-to-em(83px);
+            width: fn.px-to-em(55px);
             height: fn.px-to-em(55px);
-            border: 1px solid var.$grey--color;
             border-radius: 8px;
+            background-color: var.$primary-btn--color;
             cursor: pointer;
 
-            .arrow-icon {
-                position: absolute;
-                top: 50%;
-                right: fn.px-to-em(18px);
-                transform: translateY(-70%) rotate(-45deg);
-                width: fn.px-to-em(8px);
-                height: fn.px-to-em(8px);
-                border: {
-                    left: 2px solid var.$grey--color;
-                    bottom: 2px solid var.$grey--color;
-                };
+            @include mixins.breakpoint--x-lg-extra {
+                display: flex;
             }
 
-            .language {
-                @include mixins.d-flex(unset, center, unset);
-                padding-left: fn.px-to-em(18px);
-                width: 100%;
-                height: 100%;
-                border: 1px solid var.$grey--color;
-                border-radius: inherit;
-                background: #fff;
-                z-index: 999;
+            .line {
+                position: relative;
+                width: fn.px-to-em(24px);
+                border: 1px solid #fff;
+                border-radius: 8px;
+            }
+        }
+    }
 
-                &:not(.selected) {
-                    display: none;
-                    margin-top: 2px;
-                }
+    // link
+    .navbar__link {
+        font-size: fn.px-to-rem(16px);
+        font-weight: 600;
+        line-height: fn.px-to-rem(19px);
+        color: var.$link--color;
+        transition: all .3s ease;
+
+        &:hover {
+            color: var.$black--color;
+        }
+
+        &.active {
+            color: var.$black--color;
+        }
+    }
+
+    // links modal
+    .links__modal {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transform: translateY(fn.px-to-em(-99px));
+        padding: fn.px-to-em(40px) 0;
+        background: linear-gradient(#fff, #dedede);
+        z-index: 99;
+        opacity: 1;
+
+        .container {
+            @include mixins.d-flex(row, flex-start, space-between);
+        }
+
+        .navbar__links {
+            @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(30px));
+        }
+    }
+
+    // languages select
+    .languages-selection {
+        position: relative;
+        width: fn.px-to-em(83px);
+        height: fn.px-to-em(55px);
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:not(.mobile) {
+            @include mixins.breakpoint--x-lg-extra {
+                display: none;
+            }
+        }
+
+        .arrow-icon {
+            position: absolute;
+            top: 50%;
+            right: fn.px-to-em(18px);
+            transform: translateY(-70%) rotate(-45deg);
+            width: fn.px-to-em(8px);
+            height: fn.px-to-em(8px);
+            border: {
+                left: 2px solid var.$grey--color;
+                bottom: 2px solid var.$grey--color;
+            };
+        }
+
+        .language {
+            @include mixins.d-flex(unset, center, unset);
+            padding-left: fn.px-to-em(18px);
+            width: 100%;
+            height: 100%;
+            border: 1px solid var.$grey--color;
+            border-radius: inherit;
+            background: #fff;
+            z-index: 99;
+
+            &:not(.selected) {
+                display: none;
+                margin-top: 2px;
             }
         }
     }
