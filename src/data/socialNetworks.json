@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Instagram",
+        "slug": "instagram",
+        "link": "#"
+    },
+    {
+        "id": 2,
+        "name": "Facebook",
+        "slug": "facebook",
+        "link": "#"
+    },
+    {
+        "id": 3,
+        "name": "Telegram",
+        "slug": "telegram",
+        "link": "#"
+    },
+    {
+        "id": 4,
+        "name": "Twitter",
+        "slug": "twitter",
+        "link": "#"
+    }
+]

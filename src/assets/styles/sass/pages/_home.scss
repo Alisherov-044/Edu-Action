@@ -1,0 +1,223 @@
+@use '../abstract/mixins';
+@use '../abstract/functions' as fn;
+@use '../base/variables' as var;
+
+/*********************
+** Home Page Styles **
+*********************/
+.main {
+    position: relative;
+
+    @include mixins.breakpoint--md {
+        section {
+            margin-top: fn.px-to-em(32px) !important;
+            gap: fn.px-to-em(24px) !important;
+        }
+    }
+
+    .banner {
+        @include mixins.d-flex(unset, flex-end, unset);
+        position: relative;
+        width: 100%;
+        height: fn.px-to-em(716px);
+        margin-top: fn.px-to-em(var.$margin-between-sections);
+        border-radius: 26px;
+        overflow: hidden;
+        padding: fn.px-to-em(84px) fn.px-to-em(80px);
+        background: linear-gradient(359.84deg, #000000 1.04%, rgba(28, 25, 23, 0) 77.98%);
+
+        @include mixins.breakpoint--x-lg {
+            padding: fn.px-to-em(24px);
+        }
+
+        .img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+
+        .content {
+            @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-rem(30px));
+            position: relative;
+
+            .title {
+                font-weight: 600;
+                font-size: fn.px-to-rem(64px);
+                line-height: 120%;
+                width: fn.px-to-rem(750px);
+                color: #fff;
+
+                @include mixins.breakpoint--x-lg-extra {
+                    font-size: fn.px-to-rem(58px);
+                }
+
+                @include mixins.breakpoint--x-lg {
+                    font-size: fn.px-to-rem(48px);
+                }
+
+                @include mixins.breakpoint--lg {
+                    font-size: fn.px-to-rem(38px);
+                    font-weight: 400;
+                    width: 80%;
+                }
+
+                @include mixins.breakpoint--md {
+                    font-size: fn.px-to-rem(28px)
+                }
+            }
+
+            .description {
+                @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-rem(25px));
+                font-weight: 400;
+                font-size: fn.px-to-rem(25px);
+                line-height: 120%;
+                color: #fff;
+
+                span {
+                    width: fn.px-to-rem(393px);
+                }
+
+                @include mixins.breakpoint--x-lg-extra {
+                    font-size: fn.px-to-rem(23px);
+                }
+
+                @include mixins.breakpoint--x-lg {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .top-programs__section {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(50px));
+        position: relative;
+        margin-top: fn.px-to-em(var.$margin-between-sections);
+
+        .action {
+            @include mixins.d-flex(row, center, space-between);
+            position: relative;
+
+            .title {
+                font-weight: 600;
+                font-size: fn.px-to-rem(39px);
+                line-height: fn.px-to-rem(47px);
+                color: var.$black--color;
+
+                .to-btn--color {
+                    color: var.$primary-btn--color;
+                }
+            }
+        }
+
+        .cards__wrapper {
+            @include mixins.d-flex(row, center, unset, wrap, fn.px-to-em(24px));
+            position: relative;
+
+            @media screen and (max-width: 1460px) {
+                flex-wrap: nowrap;
+                overflow-x: scroll;
+            }
+
+            @media (pointer: coarse) {
+                scrollbar-width: none;
+            }
+        }
+    }
+
+    .news__section {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(50px));
+        position: relative;
+        margin-top: fn.px-to-em(var.$margin-between-sections);
+
+        .section__title {
+            font-weight: 600;
+            font-size: fn.px-to-rem(39px);
+            line-height: fn.px-to-rem(47px);
+            color: var.$black--color;
+        }
+
+        .news__wrapper {
+            @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(24px));
+
+            @media (pointer: coarse) {
+                scrollbar-width: none;
+            }
+
+            @media screen and (max-width: 1460px) {
+                overflow-x: scroll;
+            }
+
+            @include mixins.breakpoint--md {
+                overflow: hidden;
+            }
+        }
+    }
+
+    .about__section {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(50px));
+        position: relative;
+        margin-top: fn.px-to-em(var.$margin-between-sections);
+
+        .section__title {
+            font-weight: 600;
+            font-size: fn.px-to-rem(39px);
+            line-height: fn.px-to-percent(47px, 39px);
+            color: var.$black--color;
+
+            .to-btn--color {
+                color: var.$primary-btn--color;
+            }
+        }
+
+        .content {
+            @include mixins.d-flex(row, unset, space-between);
+            position: relative;
+            padding: fn.px-to-em(48px);
+            background-color: var.$footer-bg--color;
+            border-radius: 26px;
+            overflow: hidden;
+
+            .action {
+                @include mixins.d-flex(column, unset, unset);
+                position: relative;
+                margin-right: fn.px-to-em(130px);
+
+                .title {
+                    font-weight: 600;
+                    font-size: fn.px-to-rem(31px);
+                    line-height: fn.px-to-percent(37px, 31px);
+                    color: var.$primary-btn--color;
+                }
+
+                .description {
+                    max-width: fn.px-to-em(650px);
+                    width: 100%;
+                    font-weight: 400;
+                    font-size: fn.px-to-rem(20px);
+                    line-height: fn.px-to-percent(32px, 20px);
+                    color: var.$grey--color;
+                    margin-top: fn.px-to-em(30px);
+                    margin-bottom: fn.px-to-em(60px);
+                }
+
+                .btn {
+                    display: inline-block;
+                }
+            }
+            
+            .cards__wrapper {
+                @include mixins.d-flex(row, unset, unset, wrap, fn.px-to-em(12px));
+                max-width: fn.px-to-em(544px);
+                width: 100%;
+
+                img[alt='logo'] {
+                    width: fn.px-to-em(110px);
+                    height: fn.px-to-em(79px);
+                }
+            }
+        }
+    }
+}

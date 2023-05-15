@@ -1,0 +1,55 @@
+@use '../../abstract/mixins';
+@use '../../abstract/functions' as fn;
+@use '../../base/variables' as var;
+
+/*********************
+** News Card Styles **
+*********************/
+.news__card {
+    @include mixins.d-flex(column, unset, unset);
+    position: relative;
+    width: fn.px-to-em(337px);
+    height: fn.px-to-em(458px);
+    border-radius: 16px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    @include mixins.breakpoint--md {
+        width: calc(100% / 2 - 10px);
+    }
+
+    @include mixins.breakpoint--sm(440px) {
+        width: 100%;
+    }
+
+    .img {
+        position: relative;
+        width: 100%;
+        max-height: fn.px-to-em(216px);
+        height: 100%;
+        flex-shrink: 0;
+    }
+
+    .content {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(9px));
+        position: relative;
+        width: 100%;
+        padding: fn.px-to-em(24px);
+        background-color: var.$footer-bg--color;
+        flex: 1 1 auto;
+
+        .title {
+            font-weight: 400;
+            font-size: fn.px-to-rem(21px);
+            line-height: fn.px-to-rem(25px);
+            color: var.$black--color;
+        }
+
+        .description {
+            font-weight: 400;
+            font-size: fn.px-to-rem(16px);
+            line-height: fn.px-to-rem(22px);
+            color: var.$grey--color;
+        }
+    }
+}

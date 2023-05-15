@@ -1,0 +1,48 @@
+@use '../abstract/mixins';
+@use '../abstract/functions' as fn;
+@use '../base/variables' as var;
+
+/****************
+** Form Styles **
+****************/
+.input,
+.text-area {
+    position: relative;
+    max-width: fn.px-to-em(533px);
+    border: 1px solid var.$grey--color;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+
+    input,
+    textarea {
+        display: inline-block;
+        width: 100%;
+        padding-left: fn.px-to-em(23px);
+
+        &,
+        &::placeholder {
+            font-weight: 400;
+            font-size: fn.px-to-rem(16px);
+            line-height: fn.px-to-percent(30px);
+            color: var.$link--color;
+        }
+    }
+}
+
+.input {
+    height: fn.px-to-em(60px);
+
+    input {
+        height: 100%;
+    }
+}
+
+.text-area {
+    height: fn.px-to-em(112px);
+
+    textarea {
+        padding-top: fn.px-to-em(16px);
+        resize: none;
+    }
+}

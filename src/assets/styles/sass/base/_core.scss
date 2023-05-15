@@ -20,6 +20,7 @@
 html,
 body {
     @include mixins.full-relative;
+    scroll-behavior: smooth;
 }
 
 #root {
@@ -43,7 +44,8 @@ li {
 }
 
 button,
-input {
+input,
+textarea {
     background: transparent;
     border: none;
     outline: none;

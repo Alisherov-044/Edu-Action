@@ -62,6 +62,27 @@
                 width: fn.px-to-em(24px);
                 border: 1px solid #fff;
                 border-radius: 8px;
+                transition: all .3s ease;
+            }
+
+            &.open {
+                .line:first-child {
+                    width: fn.px-to-em(30px);
+                    transform-origin: left;
+                    transform: rotate(45deg);
+                    margin-left: fn.px-to-em(8px);
+                }
+
+                .line:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .line:last-child {
+                    width: fn.px-to-em(30px);
+                    transform-origin: left;
+                    transform: rotate(-45deg);
+                    margin-left: fn.px-to-em(8px);
+                }
             }
         }
     }
@@ -93,7 +114,17 @@
         padding: fn.px-to-em(40px) 0;
         background: linear-gradient(#fff, #dedede);
         z-index: 99;
-        opacity: 1;
+        opacity: 0;
+        transition: all .5s ease;
+
+        &.open {
+            opacity: 1;
+            transform: translateY(100%);
+        }
+
+        @media screen and (min-width: 1200px) {
+            transform: translateY(-100%) !important;
+        }
 
         .container {
             @include mixins.d-flex(row, flex-start, space-between);
@@ -111,6 +142,16 @@
         height: fn.px-to-em(55px);
         border-radius: 8px;
         cursor: pointer;
+
+        &.open {
+            .language {
+                display: flex;
+
+                &.selected::after {
+                    transform: rotate(135deg);
+                }
+            }
+        }
 
         &:not(.mobile) {
             @include mixins.breakpoint--x-lg-extra {
@@ -133,17 +174,42 @@
 
         .language {
             @include mixins.d-flex(unset, center, unset);
+            display: none;
             padding-left: fn.px-to-em(18px);
             width: 100%;
             height: 100%;
             border: 1px solid var.$grey--color;
             border-radius: inherit;
             background: #fff;
+            margin-top: 4px;
             z-index: 99;
 
-            &:not(.selected) {
-                display: none;
-                margin-top: 2px;
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &.selected {
+                display: flex;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                margin-top: 0;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 40%;
+                    right: fn.px-to-em(18px);
+                    width: fn.px-to-em(7px);
+                    height: fn.px-to-em(7px);
+                    border: {
+                        left: 1px solid var.$black--color;
+                        bottom: 1px solid var.$black--color;
+                    }
+                    transform: rotate(-45deg);
+                    transition: all .3s ease;
+                }
             }
         }
     }

@@ -1,22 +1,16 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import LanguageSelect from "./LanguageSelect";
+import Links from "./Links";
 
-const LinksModal = forwardRef(({ links, languagesData }, ref) => (
-  <div className="links__modal" ref={ref}>
-    <div className="container">
-      <ul className="navbar__links">
-        {links.map((link) => (
-          <li
-            className={`navbar__link ${link.id == 1 && "active"}`}
-            key={link.id}
-          >
-            <a href={`#${link.slug}`}>{link.value}</a>
-          </li>
-        ))}
-      </ul>
-      <LanguageSelect languagesData={languagesData} mobile={true} />
+const LinksModal = ({ links, languagesData, isOpen }) => {
+  return (
+    <div className={`links__modal ${isOpen ? "open" : ""}`}>
+      <div className="container">
+        <Links links={links} />
+        <LanguageSelect languagesData={languagesData} mobile={true} />
+      </div>
     </div>
-  </div>
-));
+  );
+};
 
 export default LinksModal;

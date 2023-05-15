@@ -1,0 +1,46 @@
+@use '../../abstract/mixins';
+@use '../../abstract/functions' as fn;
+@use '../../base/variables' as var;
+
+/************************
+** Article Card Styles **
+************************/
+.article-card {
+    @include mixins.d-flex(row, center, unset);
+    position: relative;
+    max-width: fn.px-to-em(698px);
+    width: 100%;
+    height: fn.px-to-em(212px);
+    border-radius: 12px;
+    overflow: hidden;
+
+    .img {
+        position: relative;
+        max-width: fn.px-to-em(279px);
+        width: 100%;
+        height: 100%;
+    }
+
+    .content {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(12px));
+        position: relative;
+        flex: 1 1 auto;
+        height: 100%;
+        padding: fn.px-to-em(24px);
+        background-color: var.$footer-bg--color;
+
+        .title {
+            font-weight: 400;
+            font-size: fn.px-to-rem(25px);
+            line-height: fn.px-to-rem(30px);
+            color: var.$black--color;
+        }
+
+        .description {
+            font-weight: 400;
+            font-size: fn.px-to-rem(16px);
+            line-height: fn.px-to-percent(22px);
+            color: var.$grey--color;
+        }
+    }
+}

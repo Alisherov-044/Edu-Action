@@ -7,9 +7,18 @@
 ****************/
 .icon {
     position: relative;
-    max-width: fn.px-to-em(64px);
-    max-height: fn.px-to-em(64px);
+    max-width: fn.px-to-em(40px);
+    max-height: fn.px-to-em(40px);
     cursor: pointer;
+
+    &.lg {
+        max-width: fn.px-to-em(64px);
+        max-height: fn.px-to-em(64px);
+    }
+
+    &.no-cursor {
+        cursor: default;
+    }
 
     svg {
         width: 100%;

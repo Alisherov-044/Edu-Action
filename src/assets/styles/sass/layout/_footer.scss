@@ -1,0 +1,155 @@
+@use '../abstract/mixins';
+@use '../abstract/functions' as fn;
+@use '../base/variables' as var;
+
+/******************
+** Footer Styles **
+******************/
+.footer {
+    position: relative;
+    width: 100%;
+    padding: fn.px-to-em(60px) 0;
+    background-color: var.$footer-bg--color;
+    border-top: 1px solid #C6C5C5;
+    margin-top: fn.px-to-em(var.$margin-between-sections);
+
+    .container {
+        @include mixins.d-flex(row, flex-start, space-between, wrap);
+
+        @include mixins.breakpoint--sm-extra {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        & > div {
+            margin-right: fn.px-to-em(50px);
+            margin-bottom: fn.px-to-em(40px);
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+
+    .img.logo {
+        position: relative;
+        width: fn.px-to-em(110px);
+        height: fn.px-to-em(79px);
+        margin-right: fn.px-to-em(50px);
+        margin-bottom: fn.px-to-em(40px);
+    }
+
+    .social__networks {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(20px));
+        position: relative;
+
+        .text {
+            font-weight: 400;
+            font-size: fn.px-to-rem(16px); 
+            line-height: fn.px-to-em(30px);
+            color: var.$black--color;
+        }
+
+        .social__icons {
+            @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(20px));
+
+            .social__icon {
+                position: relative;
+                width: fn.px-to-em(21px);
+                height: fn.px-to-em(21px);
+
+                i {
+                    font-size: fn.px-to-em(20px);
+                }
+            }
+        }
+    }
+
+    .contact {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(15px));
+        position: relative;
+
+        i {
+            font-size: fn.px-to-em(20px);
+
+            &.bi-at {
+                font-size: fn.px-to-em(25px);
+            }
+        }
+
+        .phone,
+        .email {
+            @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(15px));
+
+            .number,
+            .email-address {
+                font-weight: 400;
+                font-size: fn.px-to-rem(16px);
+                line-height: fn.px-to-em(30px);
+                color: var.$black--color;
+            }
+        }
+    }
+
+    .location {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(13px));
+        position: relative;
+
+        @include mixins.breakpoint--sm-extra {
+            display: none;
+        }
+
+        .address {
+            position: relative;
+            width: fn.px-to-em(210px);
+            font-weight: 400;
+            font-size: fn.px-to-rem(16px);
+            line-height: fn.px-to-em(30px);
+        }
+
+        .map {
+            @include mixins.d-flex(row, center, center, nowrap, fn.px-to-em(9px));
+            position: relative;
+            width: fn.px-to-em(142px);
+            height: fn.px-to-em(43px);
+            background-color: #fff;
+            border-radius: 16px;
+            cursor: pointer;
+
+            i {
+                font-size: fn.px-to-rem(20px);
+            }
+
+            .description {
+                font-weight: 400;
+                font-size: fn.px-to-rem(16px);
+                line-height: fn.px-to-em(19px);
+                color: var.$black--color;
+            }
+        }
+    }
+
+    .privicy {
+        @include mixins.d-flex(row, center, center, nowrap, fn.px-to-em(12px));
+        position: relative;
+        width: fn.px-to-em(246px);
+        height: fn.px-to-em(57px);
+        background-color: #fff;
+        border-radius: 16px;
+
+        .img.appx-sign {
+            position: relative;
+            width: fn.px-to-em(33px);
+            height: fn.px-to-em(33px);
+        }
+
+        .description {
+            position: relative;
+            width: fn.px-to-em(170px);
+            font-weight: 400;
+            font-size: fn.px-to-rem(12px);
+            line-height: fn.px-to-em(16px);
+            color: var.$black--color;
+        }
+    }
+}

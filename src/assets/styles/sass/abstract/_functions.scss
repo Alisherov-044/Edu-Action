@@ -15,3 +15,7 @@
 @function px-to-unitless($pixels, $font-size: txt.$font-size--default) {
   @return math.div($pixels, $font-size);
 }
+
+@function px-to-percent($pixels, $font-size: txt.$font-size--default) {
+  @return (math.div($pixels, $font-size) * 100%);
+}

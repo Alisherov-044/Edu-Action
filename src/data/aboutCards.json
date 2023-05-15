@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "image": "/src/assets/images/about-cards/about-1.png",
+        "bg": null,
+        "icon": null
+    },
+    {
+        "id": 2,
+        "image": null,
+        "bg": "linear-gradient(135.6deg, #FF3605 -6.48%, #7A00F9 105.85%)",
+        "icon": "arrow"
+    },
+    {
+        "id": 3,
+        "image": "/src/assets/images/about-cards/about-2.png",
+        "bg": null,
+        "icon": null
+    },
+    {
+        "id": 4,
+        "image": null,
+        "bg": "linear-gradient(135.6deg, #7656F9 -6.48%, #D9D9FF 105.85%)",
+        "icon": "arrow"
+    },
+    {
+        "id": 5,
+        "image": null,
+        "bg": "linear-gradient(135.6deg, #3C1286 -6.48%, #AA2BD9 105.85%)",
+        "icon": "arrow"
+    },
+    {
+        "id": 6,
+        "image": "/src/assets/images/about-cards/about-3.png",
+        "bg": null,
+        "icon": null
+    },
+    {
+        "id": 7,
+        "image": null,
+        "bg": "linear-gradient(135.6deg, #EF5E6A -6.48%, #DEC222 105.85%)",
+        "icon": "arrow"
+    },
+    {
+        "id": 8,
+        "image": "/src/assets/images/about-cards/about-4.png",
+        "bg": null,
+        "icon": null
+    },
+    {
+        "id": 9,
+        "image": "/src/assets/images/about-cards/about-5.png",
+        "bg": null,
+        "icon": null
+    },
+    {
+        "id": 10,
+        "image": null,
+        "bg": "linear-gradient(135.6deg, #028484 -6.48%, #03E8D1 105.85%)",
+        "icon": "arrow"
+    },
+    {
+        "id": 11,
+        "image": "/src/assets/images/about-cards/about-6.png",
+        "bg": null,
+        "icon": null
+    },
+    {
+        "id": 12,
+        "image": null,
+        "bg": null,
+        "icon": "logo"
+    }
+]

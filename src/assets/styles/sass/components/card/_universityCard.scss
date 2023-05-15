@@ -1,0 +1,65 @@
+@use '../../abstract/mixins';
+@use '../../abstract/functions' as fn;
+@use '../../base/variables' as var;
+
+/**************************
+** UniversityCard Styles **
+**************************/
+.university-card {
+    @include mixins.d-flex(unset, flex-end, unset);
+    position: relative;
+    width: fn.px-to-em(337px);
+    height: fn.px-to-em(260px);
+    border-radius: 16px;
+    padding: fn.px-to-em(26px) fn.px-to-em(24px);
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);;
+
+    .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        z-index: -2;
+    }
+
+    .content {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(12px));
+        position: relative;
+        width: 100%;
+        
+        .name {
+            font-weight: 600;
+            font-size: fn.px-to-rem(16px);
+            line-height: fn.px-to-em(19px);
+            color: #fff;
+            max-width: fn.px-to-em(187px);
+        }
+
+        .info__wrapper {
+            @include mixins.d-flex(row, center, space-between);
+            position: relative;
+
+            .location {
+                @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(4px));
+            }
+
+            .location,
+            .specification {
+                font-weight: 300;
+                font-size: fn.px-to-rem(16px);
+                line-height: fn.px-to-em(19px);
+                color: #fff;
+
+                .location-icon {
+                    position: relative;
+                    display: inline-block;
+                    width: 16px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+}
