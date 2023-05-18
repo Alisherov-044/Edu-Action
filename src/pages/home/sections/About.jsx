@@ -3,10 +3,11 @@ import { Button, AboutCard, Icon, logo } from "../..";
 
 const About = ({ aboutCards }) => {
   return (
-    <div className="about__section">
+    <section className="about__section">
       <h2 className="section__title">
         Biz <span className="to-btn--color">haqimizda</span>
       </h2>
+      <Button text="Batafsil" additionalClasses={["secondary about"]} />
       <div className="content">
         <div className="action">
           <h3 className="title">Edu-action</h3>
@@ -18,15 +19,13 @@ const About = ({ aboutCards }) => {
             xorijiy treninglar, ko'rgazmalarda qatnashamiz va butun dunyo
             bo'ylab hamkorlar bilan shartnomalar tuzamiz.
           </p>
-          <span>
-            <Button text="Batafsil" additionalClasses={["secondary"]} />
-          </span>
         </div>
         <div className="cards__wrapper">
           {aboutCards.map((aboutCard) =>
             aboutCard.icon ? (
               aboutCard.icon === "arrow" ? (
                 <AboutCard
+                  key={aboutCard.id}
                   bg={aboutCard.bg}
                   icon={
                     <Icon
@@ -66,15 +65,25 @@ const About = ({ aboutCards }) => {
                   }
                 />
               ) : (
-                <AboutCard icon={<img src={logo} alt="logo" />} />
+                <AboutCard
+                  key={aboutCard.id}
+                  icon={<img src={logo} alt="logo" />}
+                  additionalClasses={["active"]}
+                />
               )
             ) : (
-              <AboutCard image={aboutCard.image} />
+              <AboutCard
+                key={aboutCard.id}
+                image={aboutCard.image}
+                additionalClasses={[
+                  `${[1, 3, 6].includes(aboutCard.id) ? "active" : ""}`,
+                ]}
+              />
             )
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

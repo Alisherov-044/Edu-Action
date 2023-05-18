@@ -8,13 +8,65 @@
 .main {
     position: relative;
 
+    * {
+        @media (pointer: coarse) {
+            scrollbar-width: none;
+        }
+    }
+
     @include mixins.breakpoint--md {
+        header,
+        footer,
         section {
             margin-top: fn.px-to-em(32px) !important;
             gap: fn.px-to-em(24px) !important;
         }
     }
 
+    .arrow-card {
+        @include mixins.breakpoint--md {
+            width: calc(100% / 2 - 10px) !important;
+        }
+    
+        @include mixins.breakpoint--sm(440px) {
+            width: 100% !important;
+        }
+    }
+
+    .arrow-cards__wrapper {
+        @include mixins.breakpoint--x-lg-extra(1460px) {
+            flex-wrap: nowrap !important;
+            overflow-x: scroll;
+        }
+
+        @include mixins.breakpoint--md {
+            overflow: hidden;
+        }
+    }
+
+    .arrow-icons__wrapper {
+        @include mixins.d-flex(row, center, center, nowrap, fn.px-to-em(12px));
+        position: relative;
+        width: 100%;
+        display: none;
+
+        @include mixins.breakpoint--md {
+            display: flex;
+        }
+    }
+
+    .to-btn--color {
+        color: var.$primary-btn--color;
+    }
+
+    .section__title {
+        font-weight: 600;
+        font-size: fn.px-to-rem(39px);
+        line-height: fn.px-to-rem(47px);
+        color: var.$black--color;
+    }
+
+    // Banner
     .banner {
         @include mixins.d-flex(unset, flex-end, unset);
         position: relative;
@@ -91,6 +143,7 @@
         }
     }
 
+    // Programs section
     .top-programs__section {
         @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(50px));
         position: relative;
@@ -99,76 +152,48 @@
         .action {
             @include mixins.d-flex(row, center, space-between);
             position: relative;
-
-            .title {
-                font-weight: 600;
-                font-size: fn.px-to-rem(39px);
-                line-height: fn.px-to-rem(47px);
-                color: var.$black--color;
-
-                .to-btn--color {
-                    color: var.$primary-btn--color;
-                }
-            }
         }
 
         .cards__wrapper {
             @include mixins.d-flex(row, center, unset, wrap, fn.px-to-em(24px));
             position: relative;
 
-            @media screen and (max-width: 1460px) {
+            
+            @include mixins.breakpoint--x-lg-extra(1460px) {
                 flex-wrap: nowrap;
                 overflow-x: scroll;
-            }
-
-            @media (pointer: coarse) {
-                scrollbar-width: none;
             }
         }
     }
 
+    // News section
     .news__section {
         @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(50px));
         position: relative;
         margin-top: fn.px-to-em(var.$margin-between-sections);
 
-        .section__title {
-            font-weight: 600;
-            font-size: fn.px-to-rem(39px);
-            line-height: fn.px-to-rem(47px);
-            color: var.$black--color;
-        }
-
         .news__wrapper {
             @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(24px));
-
-            @media (pointer: coarse) {
-                scrollbar-width: none;
-            }
-
-            @media screen and (max-width: 1460px) {
-                overflow-x: scroll;
-            }
-
-            @include mixins.breakpoint--md {
-                overflow: hidden;
-            }
         }
     }
 
+    // About section
     .about__section {
         @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(50px));
         position: relative;
         margin-top: fn.px-to-em(var.$margin-between-sections);
 
-        .section__title {
-            font-weight: 600;
-            font-size: fn.px-to-rem(39px);
-            line-height: fn.px-to-percent(47px, 39px);
-            color: var.$black--color;
+        .about {
+            position: absolute;
+            display: inline-block;
+            bottom: fn.px-to-em(48px);
+            left: fn.px-to-em(48px);
+            z-index: 5;
 
-            .to-btn--color {
-                color: var.$primary-btn--color;
+            @include mixins.breakpoint--x-lg-extra(1220px) {
+                bottom: fn.px-to-em(24px);
+                left: unset;
+                right: fn.px-to-em(24px);
             }
         }
 
@@ -180,10 +205,20 @@
             border-radius: 26px;
             overflow: hidden;
 
+            @include mixins.breakpoint--x-lg-extra(1220px) {
+                flex-direction: column;
+                padding: fn.px-to-em(24px);
+                padding-bottom: fn.px-to-em(120px);
+            }
+
             .action {
                 @include mixins.d-flex(column, unset, unset);
                 position: relative;
                 margin-right: fn.px-to-em(130px);
+
+                @include mixins.breakpoint--x-lg-extra(1220px) {
+                    margin-right: 0;
+                }
 
                 .title {
                     font-weight: 600;
@@ -201,10 +236,12 @@
                     color: var.$grey--color;
                     margin-top: fn.px-to-em(30px);
                     margin-bottom: fn.px-to-em(60px);
-                }
 
-                .btn {
-                    display: inline-block;
+                    @include mixins.breakpoint--x-lg-extra(1220px) {
+                        max-width: 100%;
+                        margin-top: fn.px-to-em(12px);
+                        margin-bottom: fn.px-to-em(30px);
+                    }
                 }
             }
             
@@ -213,9 +250,148 @@
                 max-width: fn.px-to-em(544px);
                 width: 100%;
 
+                @include mixins.breakpoint--x-lg-extra(1220px) {
+                    max-width: 100%;
+                }
+
                 img[alt='logo'] {
                     width: fn.px-to-em(110px);
                     height: fn.px-to-em(79px);
+                }
+
+                .about-card {
+                    @include mixins.breakpoint--sm-extra(520px) {
+                        width: calc(50% - fn.px-to-em(12px));
+                    }
+
+                    &:not(.active) {
+                        @include mixins.breakpoint--x-lg-extra(1220px) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Articles section
+    .articles__section {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(50px));
+        position: relative;
+        margin-top: fn.px-to-em(var.$margin-between-sections);
+
+        .section__action {
+            @include mixins.d-flex(row, center, space-between);
+            position: relative;
+        }
+
+        .articles__wrapper {
+            @include mixins.d-flex(row, unset, unset, wrap, fn.px-to-em(24px));
+            position: relative;
+
+            @include mixins.breakpoint--x-lg-extra(1460px) {
+
+                .article-card {
+                    flex-direction: column;
+                    flex-shrink: 0;
+                    width: fn.px-to-em(322px);
+                    height: fn.px-to-em(450px);
+
+                    .img {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    // Comments section
+    .comments__section {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(50px));
+        position: relative;
+        margin-top: fn.px-to-em(var.$margin-between-sections);
+
+        .section__action {
+            position: relative;
+        }
+
+        .comments__wrapper {
+            @include mixins.d-flex(row, center, unset, nowrap, fn.px-to-em(24px));
+            position: relative;
+        }
+    }
+
+    // Contact section
+    .contact__section {
+        @include mixins.d-flex(column, unset, unset, nowrap, fn.px-to-em(50px));
+        position: relative;
+        margin-top: fn.px-to-em(var.$margin-between-sections);
+
+        .content {
+            @include mixins.d-flex(row, center, unset);
+            position: relative;
+            width: 100%;
+            height: fn.px-to-em(524px);
+            border-radius: 16px;
+            overflow: hidden;
+
+            @include mixins.breakpoint--lg {
+                flex-direction: column;
+                height: fn.px-to-em(830px);
+            }
+
+            .img {
+                position: relative;
+                max-width: 50%;
+                width: 100%;
+                height: 100%;
+
+                @include mixins.breakpoint--lg {
+                    height: 40%;
+                    max-width: 100%;
+                }
+            }
+
+            .form {
+                @include mixins.d-flex(column, unset, unset);
+                position: relative;
+                width: 50%;
+                height: 100%;
+                padding: fn.px-to-em(50px) fn.px-to-em(60px);
+                background-color: var.$footer-bg--color;
+
+                @include mixins.breakpoint--lg {
+                    height: 60%;
+                    width: 100%;
+
+                    .input,
+                    .text-area,
+                    .btn__wrapper {
+                        max-width: 100% !important;
+                    }
+                }
+
+                @include mixins.breakpoint--sm-extra {
+                    padding: fn.px-to-em(25px) fn.px-to-em(30px);
+                }
+
+                .title {
+                    font-weight: 600;
+                    font-size: fn.px-to-rem(31px);
+                    line-height: fn.px-to-percent(37px, 31px);
+                    color: var.$grey--color;
+                    margin-bottom: fn.px-to-em(10px);
+                }
+
+                .input,
+                .text-area {
+                    margin-top: fn.px-to-em(20px);   
+                }
+
+                .btn__wrapper {
+                    @include mixins.d-flex(row, center, flex-end);
+                    margin-top: fn.px-to-em(20px);
+                    max-width: fn.px-to-em(533px);
                 }
             }
         }

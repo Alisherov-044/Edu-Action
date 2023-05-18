@@ -23,7 +23,9 @@ const Navbar = () => {
           <Links links={links} />
         </div>
         <div className="navbar__action">
-          <Button text="Ariza qoldirish" additionalClasses={["primary"]} />
+          <a href="#contact">
+            <Button text="Ariza qoldirish" additionalClasses={["primary"]} />
+          </a>
           <LanguageSelect languagesData={languagesData} />
           <div
             className={`burger-menu ${modalIsOpen ? "open" : ""}`}

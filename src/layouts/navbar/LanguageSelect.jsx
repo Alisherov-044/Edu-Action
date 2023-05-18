@@ -26,7 +26,7 @@ const LanguageSelect = ({ languagesData, mobile = false }) => {
   }, [langIsOpen]);
 
   return (
-    <ul
+    <button
       className={`languages-selection ${mobile ? "mobile" : ""} ${
         langIsOpen ? "open" : ""
       }`}
@@ -44,7 +44,7 @@ const LanguageSelect = ({ languagesData, mobile = false }) => {
           {language.code}
         </li>
       ))}
-    </ul>
+    </button>
   );
 };
 

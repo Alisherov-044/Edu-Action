@@ -13,6 +13,8 @@
     border-radius: 16px;
     padding: fn.px-to-em(27px) fn.px-to-em(24px);
     overflow: hidden;
+    background: linear-gradient(179.97deg, rgba(0, 0, 0, 0) 0.03%, rgba(0, 0, 0, 0.5) 126.88%);
+    flex-shrink: 0;
 
     .img {
         position: absolute;

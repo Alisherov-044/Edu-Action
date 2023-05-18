@@ -2,7 +2,7 @@ import React from "react";
 
 const ArticleCard = ({ image, title, description }) => {
   return (
-    <div className="article-card">
+    <div className="article-card arrow-card">
       <div className="img">
         <img src={image} alt={title} />
       </div>

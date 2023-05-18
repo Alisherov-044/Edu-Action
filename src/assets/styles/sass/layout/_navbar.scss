@@ -8,7 +8,7 @@
 .navbar {
     position: relative;
     padding: fn.px-to-em(10px) 0;
-    border-bottom: 1px solid var.$link--color;
+    border-bottom: 1px solid var.$footer-border--color;
 
     @include mixins.breakpoint--x-lg-extra {
         border-bottom: transparent;
@@ -111,7 +111,7 @@
         left: 0;
         width: 100%;
         transform: translateY(fn.px-to-em(-99px));
-        padding: fn.px-to-em(40px) 0;
+        padding: fn.px-to-em(50px) 0;
         background: linear-gradient(#fff, #dedede);
         z-index: 99;
         opacity: 0;
@@ -138,10 +138,14 @@
     // languages select
     .languages-selection {
         position: relative;
-        width: fn.px-to-em(83px);
-        height: fn.px-to-em(55px);
+        width: fn.px-to-rem(70px);
+        height: fn.px-to-rem(55px);
         border-radius: 8px;
         cursor: pointer;
+
+        @include mixins.breakpoint--sm-extra {
+            width: fn.px-to-rem(85px);
+        }
 
         &.open {
             .language {
@@ -174,6 +178,7 @@
 
         .language {
             @include mixins.d-flex(unset, center, unset);
+            position: relative;
             display: none;
             padding-left: fn.px-to-em(18px);
             width: 100%;

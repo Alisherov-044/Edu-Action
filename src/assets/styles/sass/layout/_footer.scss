@@ -10,8 +10,12 @@
     width: 100%;
     padding: fn.px-to-em(60px) 0;
     background-color: var.$footer-bg--color;
-    border-top: 1px solid #C6C5C5;
+    border-top: 1px solid var.$footer-border--color;
     margin-top: fn.px-to-em(var.$margin-between-sections);
+
+    @include mixins.breakpoint--x-lg-extra {
+        border-top: transparent;
+    }
 
     .container {
         @include mixins.d-flex(row, flex-start, space-between, wrap);

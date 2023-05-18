@@ -2,7 +2,7 @@ import React from "react";
 
 const NewsCard = ({ image, title, description }) => {
   return (
-    <div className="news__card">
+    <div className="news__card arrow-card">
       <div className="img">
         <img src={image} alt={title} />
       </div>

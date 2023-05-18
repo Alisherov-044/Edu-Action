@@ -1,13 +1,26 @@
 import React, { useState } from "react";
-import { banner, Icon, universitiesData, newsData, aboutCardsData } from "..";
+import {
+  banner,
+  Icon,
+  universitiesData,
+  newsData,
+  aboutCardsData,
+  articlesData,
+  commentsData,
+} from "..";
 import Programs from "./sections/Programs";
 import News from "./sections/News";
 import About from "./sections/About";
+import Articles from "./sections/Articles";
+import Comments from "./sections/Comments";
+import Contact from "./sections/Contact";
 
 const HomePage = () => {
   const [universities, setUniversities] = useState(universitiesData);
   const [news, setNews] = useState(newsData);
   const [aboutCards, setAboutCards] = useState(aboutCardsData);
+  const [articles, setArticles] = useState(articlesData);
+  const [comments, setComments] = useState(commentsData);
 
   return (
     <main className="main" id="home-page">
@@ -64,6 +77,9 @@ const HomePage = () => {
         <Programs universities={universities} />
         <News newsData={news} />
         <About aboutCards={aboutCards} />
+        <Articles articles={articles} />
+        <Comments comments={comments} />
+        <Contact />
       </div>
     </main>
   );

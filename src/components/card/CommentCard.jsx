@@ -1,8 +1,8 @@
 import React from "react";
 
-const CommentCard = ({ image, name, specification }) => {
+const CommentCard = ({ image, name, specification, link }) => {
   return (
-    <div className="comment-card">
+    <a href={link} className="comment-card arrow-card">
       <div className="img">
         <img src={image} alt={name} />
       </div>
@@ -10,7 +10,7 @@ const CommentCard = ({ image, name, specification }) => {
         <h5 className="name">{name}</h5>
         <p className="specification">{specification}</p>
       </div>
-    </div>
+    </a>
   );
 };
 

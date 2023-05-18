@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "image": "/src/assets/images/users/user-1.png",
+        "first_name": "Nodir",
+        "last_name": "Jumaev",
+        "specification": "Boston universiteti talabasi",
+        "link": "#"
+    },
+    {
+        "id": 2,
+        "image": "/src/assets/images/users/user-2.png",
+        "first_name": "Jamshid",
+        "last_name": "Qo’chqorov",
+        "specification": "Myunxen texnika niversiteti talabasi",
+        "link": "#"
+    },
+    {
+        "id": 3,
+        "image": "/src/assets/images/users/user-3.png",
+        "first_name": "Nodira",
+        "last_name": "Jumaeva",
+        "specification": "Boston universiteti talabasi",
+        "link": "#"
+    },
+    {
+        "id": 4,
+        "image": "/src/assets/images/users/user-4.png",
+        "first_name": "Nodir",
+        "last_name": "Jumaev",
+        "specification": "Boston universiteti talabasi",
+        "link": "#"
+    }
+]

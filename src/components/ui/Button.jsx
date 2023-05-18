@@ -1,14 +1,14 @@
 import React, { forwardRef } from "react";
 
 const Button = forwardRef(({ text, additionalClasses = [] }, ref) => (
-  <div
+  <button
     className={`btn ${additionalClasses.map(
       (additionalClass) => additionalClass
     )}`}
     ref={ref}
   >
     {text}
-  </div>
+  </button>
 ));
 
 export default Button;

@@ -5,7 +5,7 @@ const Programs = ({ universities }) => {
   return (
     <section className="top-programs__section">
       <div className="action">
-        <div className="title">
+        <div className="section__title">
           Top <span className="to-btn--color">dasturlar</span>
         </div>
         <Button text="Barchasi" additionalClasses={["secondary"]} />

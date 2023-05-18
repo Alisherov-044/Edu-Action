@@ -9,7 +9,7 @@
 .text-area {
     position: relative;
     max-width: fn.px-to-em(533px);
-    border: 1px solid var.$grey--color;
+    border: 1px solid var.$footer-border--color;
     border-radius: 8px;
     overflow: hidden;
     background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
@@ -18,7 +18,7 @@
     textarea {
         display: inline-block;
         width: 100%;
-        padding-left: fn.px-to-em(23px);
+        padding: 0 fn.px-to-em(23px);
 
         &,
         &::placeholder {

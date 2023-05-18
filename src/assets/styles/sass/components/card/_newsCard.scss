@@ -14,14 +14,6 @@
     overflow: hidden;
     flex-shrink: 0;
 
-    @include mixins.breakpoint--md {
-        width: calc(100% / 2 - 10px);
-    }
-
-    @include mixins.breakpoint--sm(440px) {
-        width: 100%;
-    }
-
     .img {
         position: relative;
         width: 100%;

@@ -14,6 +14,19 @@
     border-radius: 12px;
     overflow: hidden;
 
+    @include mixins.breakpoint--x-lg-extra(1460px) {
+        .article-card {
+            flex-direction: column;
+            flex-shrink: 0;
+            width: calc(100% / 3 - fn.px-to-em(24px));
+            height: fn.px-to-em(450px);
+
+            .img {
+                max-width: 100%;
+            }
+        }
+    }
+
     .img {
         position: relative;
         max-width: fn.px-to-em(279px);
